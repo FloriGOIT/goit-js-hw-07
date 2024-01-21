@@ -30,15 +30,19 @@ function liImages()
      itemA.append(liImg);
      fragment.append(itemLi);
     }
-};
+};    
 liImages();
 container.append(fragment)
-console.log(container);
+
 
 //Listener
-container.addEventListener("click", (e) => {
-  e.preventDefault();
-  let x = e.target;
+container.addEventListener("click", (event) => {
+  event.preventDefault();
+  let x = event.target;
   let y = x.getAttribute("data-source");
   let z = x.getAttribute("alt");
-	basicLightbox.create(`<img src = ${y} alt = ${z}>`).show() })
+  basicLightbox.create(`<img src = ${y} alt = ${z}>`).show();})
+  
+document.addEventListener("keydown", (event) => {if(event.key == "Escape"){event.preventDefault();
+                                                                             const elem = document.querySelector(".basicLightbox");
+                                                                             elem.remove()}})
