@@ -36,13 +36,16 @@ container.append(fragment)
 
 
 //Listener
+let instance;
 container.addEventListener("click", (event) => {
   event.preventDefault();
   let x = event.target;
   let y = x.getAttribute("data-source");
   let z = x.getAttribute("alt");
-  basicLightbox.create(`<img src = ${y} alt = ${z}>`).show();})
-  
+  instance = basicLightbox.create(`<img src = ${y} alt = ${z}>`).show();})
+
 document.addEventListener("keydown", (event) => {if(event.key == "Escape"){event.preventDefault();
                                                                              const elem = document.querySelector(".basicLightbox");
                                                                              elem.remove()}})
+
+// am incercat sa folosesc instance.close() dar nu imi recunoaste functie
