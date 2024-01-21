@@ -36,7 +36,7 @@ container.append(fragment)
 
 
 //Listener
-let instance;
+let instance = basicLightbox.create(`<img>`);
 container.addEventListener("click", (event) => {
   event.preventDefault();
   let x = event.target;
@@ -44,8 +44,7 @@ container.addEventListener("click", (event) => {
   let z = x.getAttribute("alt");
   instance = basicLightbox.create(`<img src = ${y} alt = ${z}>`).show();})
 
-document.addEventListener("keydown", (event) => {if(event.key == "Escape"){event.preventDefault();
-                                                                             const elem = document.querySelector(".basicLightbox");
-                                                                             elem.remove()}})
+document.addEventListener("keydown", (event) => {if(event.key == "Escape"){const elem = document.querySelector(".basicLightbox");
+                                                                           elem.remove();}})
 
-// am incercat sa folosesc instance.close() dar nu imi recunoaste functie
+// am incercat sa folosesc instance.close() dar nu imi recunoaste functia
