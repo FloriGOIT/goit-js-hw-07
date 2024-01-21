@@ -36,13 +36,13 @@ container.append(fragment)
 
 
 //Listener
-let instance = basicLightbox.create(`<img>`);
+
 container.addEventListener("click", (event) => {
   event.preventDefault();
   let x = event.target;
   let y = x.getAttribute("data-source");
   let z = x.getAttribute("alt");
-  instance = basicLightbox.create(`<img src = ${y} alt = ${z}>`).show();})
+  let instance = basicLightbox.create(`<img src = ${y} alt = ${z}>`).show();})
 
 document.addEventListener("keydown", (event) => {if(event.key == "Escape"){const elem = document.querySelector(".basicLightbox");
                                                                            elem.remove();}})
