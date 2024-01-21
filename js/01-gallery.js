@@ -47,5 +47,5 @@ container.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {if(event.key == "Escape"){event.preventDefault();
                                                                              const elem = document.querySelector(".basicLightbox");
                                                                              elem.remove()}})
-console.log(body);
+console.log(document.body);
 // am incercat sa folosesc instance.close() dar nu imi recunoaste functie
