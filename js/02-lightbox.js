@@ -24,9 +24,7 @@ function liImages()
      liImg.setAttribute("src", `${basic.preview}`);
      liImg.setAttribute("alt", `${basic.description}`);}
      itemA.setAttribute("href", `${basic.original}`);
-     itemA.setAttribute("title", `${basic.description}`);
     
-
      itemLi.append(itemA);
      itemA.append(liImg);
      fragment.append(itemLi);
@@ -37,10 +35,7 @@ container.append(fragment)
 
 
 //Listener
-
-container.addEventListener("click", (event) => {
-  event.preventDefault();
-  let presentation = new SimpleLightbox('.gallery a', { /* options */ });})
+  new SimpleLightbox(".gallery li a", { captionsData: "alt"});
 
 
 
